@@ -1,0 +1,42 @@
+<div class="payment-option _collapsible opc-payment-additional donation"
+     data-bind="mageInit: {'collapsible':{'openedState': '_active'}}">
+    <div class="payment-option-title field choice" data-role="title">
+        <span class="action action-toggle" id="block-donation-heading" role="heading" aria-level="2">
+            <!-- ko i18n: 'Make a Donation'--><!-- /ko -->
+        </span>
+    </div>
+    <div class="payment-option-content" data-role="content">
+        <form class="form form-donation" id="donation-form">
+            <div class="payment-option-inner">
+                <div class="field">
+                    <label class="label" for="donation-amount">
+                        <span data-bind="i18n: 'Click to type your donation amount'"></span>
+                    </label>
+                    <div class="control">
+                        <input class="input-text"
+                               type="number"
+                               id="donation-amount"
+                               name="donationAmount"
+                               data-validate="{'required-entry':true}"
+                               data-bind="value: chosenAmount, attr:{disabled:isDonated(), placeholder: $t('Enter donation amount')} " />
+                    </div>
+                </div>
+            </div>
+            <div class="actions-toolbar">
+                <div class="primary">
+                    <!-- ko ifnot: isDonated -->
+                    <button class="action action-donate" type="submit" data-bind="click: changeDonationAmount">
+                        <span><!-- ko i18n: 'Make a Donation'--><!-- /ko --></span>
+                    </button>
+                    <!-- /ko -->
+                    <!-- ko if: isDonated -->
+                    <button class="action action-cancel" type="submit" data-bind="click: cancel">
+                        <span><!-- ko i18n: 'Cancel Donation'--><!-- /ko --></span>
+                    </button>
+                    <!-- /ko -->
+                </div>
+                <!-- ... -->
+            </div>
+        </form>
+    </div>
+</div>

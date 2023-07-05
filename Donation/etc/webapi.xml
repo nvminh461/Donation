@@ -1,0 +1,11 @@
+<!-- <?xml version="1.0"?> -->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <!-- Configure custom route for setting donation amount -->
+    <route url="/V1/donation/:quoteId/amount/:amount" method="PUT">
+        <service class="Dev\Donation\Api\DonationManagementInterface" method="set"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+</routes>

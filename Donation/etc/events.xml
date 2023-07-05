@@ -1,0 +1,8 @@
+<!-- <?xml version="1.0"?> -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <!-- Configure observer for sales_order_place_before event -->
+    <event name="sales_order_place_before">
+        <observer name="donation_quote_to_order" instance="Dev\Donation\Observer\AddDonationSalesOrder"/>
+    </event>
+</config>

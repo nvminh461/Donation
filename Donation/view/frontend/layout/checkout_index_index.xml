@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="checkout" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <referenceBlock name="checkout.root">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <!-- Configure the "checkout" component -->
+                            <item name="checkout" xsi:type="array">
+                                <item name="children" xsi:type="array">
+                                    <item name="steps" xsi:type="array">
+                                        <item name="children" xsi:type="array">
+                                            <item name="billing-step" xsi:type="array">
+                                                <item name="children" xsi:type="array">
+                                                    <item name="payment" xsi:type="array">
+                                                        <item name="children" xsi:type="array">
+                                                            <item name="afterMethods" xsi:type="array">
+                                                                <item name="children" xsi:type="array">
+                                                                    <!-- Add the "donation" component after the "payment" section -->
+                                                                    <item name="donation" xsi:type="array">
+                                                                        <item name="component" xsi:type="string">Dev_Donation/js/view/donation</item>
+                                                                        <item name="displayArea" xsi:type="string">donation</item>
+                                                                        <item name="provider" xsi:type="string">checkoutProvider</item>
+                                                                    </item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                    <item name="sidebar" xsi:type="array">
+                                        <item name="children" xsi:type="array">
+                                            <item name="summary" xsi:type="array">
+                                                <item name="children" xsi:type="array">
+                                                    <item name="totals" xsi:type="array">
+                                                        <item name="children" xsi:type="array">
+                                                            <!-- Add the "donation" component to the "totals" section -->
+                                                            <item name="donation" xsi:type="array">
+                                                                <item name="component" xsi:type="string">Dev_Donation/js/view/totals</item>
+                                                                <item name="sortOrder" xsi:type="string">40</item>
+                                                                <item name="displayArea" xsi:type="string">donation</item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+            </referenceBlock>
+        </referenceContainer>
+    </body>
+</page>

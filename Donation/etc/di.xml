@@ -1,0 +1,12 @@
+<!-- <?xml version="1.0"?> -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Configure preference for DonationManagementInterface -->
+    <preference for="Dev\Donation\Api\DonationManagementInterface" type="Dev\Donation\Model\DonationManagement"/>
+
+    <!-- Add plugin for Order Totals block -->
+    <type name="Magento\Sales\Block\Order\Totals">
+        <plugin name="order_totals_add_donation" type="Dev\Donation\Plugin\Order\TotalsAddDonation" sortOrder="10"
+                disabled="false"/>
+    </type>
+</config>
